@@ -15,8 +15,6 @@ app.use(express.static(path.join(__dirname, './client/static')));
 app.set("views", path.join(__dirname, "./client/views"));
 app.set("view engine", "ejs");
 
-mongoose.connect('mongodb://localhost/falcons_db')
-
 mongoose.Promise = global.Promise;
 
 
