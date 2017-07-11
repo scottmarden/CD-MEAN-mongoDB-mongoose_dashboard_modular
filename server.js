@@ -15,11 +15,20 @@ app.use(express.static(path.join(__dirname, 'static')));
 app.set("views", path.join(__dirname, "./views"));
 app.set("view engine", "ejs");
 
-require("./server/config/routes.js")(app);
-
-mongoose.connect('mongodb://localhost/quotes_db')
+mongoose.connect('mongodb://localhost/falcons_db')
 
 mongoose.Promise = global.Promise;
+
+let FalconSchema = new mongoose.Schema({
+	name: {type: String},
+	age: {type: String},
+	wingspan: {type: Number}
+}, {timestamps: true});
+// the way that we access timestamps is `.createdAt` and `.updatedAt`
+
+mongoose.model('Falcon', FalconSchema);
+
+require('./server/config/routes.js')(app);
 
 var server = app.listen(3316, () => {
 	console.log("App listening on port 3316");

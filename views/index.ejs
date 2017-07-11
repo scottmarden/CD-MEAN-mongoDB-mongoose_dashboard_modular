@@ -11,7 +11,24 @@
 	</head>
 	<body>
 		<div id="wrapper">
-			<h1>Welcome home!</h1>
+			<h1>Welcome to the Falcon's Nest!</h1>
+			<div id="falcons">
+				<% for (let i =-  0; i < falcons.length; i++){ %>
+					<div class="falcon">
+						<p>Name: <%= falcons[i].name %> </p>
+						<p>Age: <%= falcons[i].age %></p>
+						<p>Wingspan: <%= falcons[i].wingspan %>''</p>
+						<a href="/falcons/<%= falcons[i]._id %>">View Falcon</a>
+						<a href="/falcons/edit/<%= falcons[i]._id %>">Edit Falcon</a>
+						<form action="/falcons/destroy/<%= falcons[i]._id %>" method="post">
+							<button type="submit">Delete Falcon</button>
+						</form>
+					</div>
+				<% } %>
+			</div>
+			<div links>
+				<a href="/new">Add Falcon</a>
+			</div>
 		</div>
 	</body>
 </html>

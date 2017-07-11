@@ -1,0 +1,27 @@
+body {
+	background-color: lightblue;
+}
+
+#falcons div {
+	border: 1px solid black;
+	background-color: white;
+	display: inline-block;
+	padding: 20px;
+}
+
+#falcon {
+	border: 1px solid black;
+	background-color: white;
+	display: inline-block;
+	padding: 20px;
+}
+
+a {
+	display: inline-block;
+	margin: 5px;
+}
+
+label, input, textarea {
+	margin: 10px;
+	display: block;
+}

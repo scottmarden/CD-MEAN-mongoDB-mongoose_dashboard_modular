@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>View <%= falcon.name %></title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			// Javascript goes here
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<a href="/">Home</a>
+				<hr>
+			</div>
+			<div id="falcon">
+				<p>Name: <%= falcon.name %> </p>
+				<p>Age: <%= falcon.age %></p>
+				<p>Wingspan: <%= falcon.wingspan %>''</p>
+				<a href="/falcons/edit/<%= falcon._id %>">Edit Falcon</a>
+				<form action="/falcons/destroy/<%= falcon._id %>" method="post">
+					<button type="submit">Delete Falcon</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
